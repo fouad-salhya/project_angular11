@@ -1,0 +1,55 @@
+<div align="right">
+    <button class="btn btn-primary m-3" routerLink="/add-mobile" >
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+</div>
+  
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col-md-6 mx-auto mb-5">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input [(ngModel)]="search" type="text" name="search"
+                           class="form-control" placeholder="search product ..."
+                            (keyup)="searchMobile()"
+                           >
+                     <button class="btn btn-primary">search</button>
+                </div>
+            </form>
+            <form (ngSubmit)="updateMobile()"  *ngIf="!showForms">
+                <div class="form-group">
+                    <label for="name"> name </label>
+                 <input type="text" class="form-control" [(ngModel)]="myMobile.name" id="name" name="name">
+             </div>
+                <div class="form-group">
+                    <label for="prix"> prix </label>
+                 <input type="number" class="form-control" [(ngModel)]="myMobile.prix" id="prix" name="prix">
+             </div>
+                <div class="form-group">
+                    <label for="label"> label </label>
+                 <input type="text" class="form-control" [(ngModel)]="myMobile.label" id="label" name="label">
+             </div>
+             <div class="form-group">
+                 <input type="file" name="fichier" [(ngModel)]="myMobile.image"> 
+             </div>
+             <button class="btn btn-primary btn-block">
+                  Update 
+             </button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let mobile of resultSearch">
+            <div class="card" (click)="edit(mobile)">
+                <img class="card-img-top" src="{{mobile.image}}" alt="" height="250x" width="50px">
+                <div class="card-body">
+                    <h4 class="card-title">{{mobile.name}}</h4>
+                    <strong>{{mobile.label}}</strong>
+                      <div align="right">
+                           <span>{{mobile.prix | currency : 'USD'}}</span> 
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

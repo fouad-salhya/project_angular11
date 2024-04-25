@@ -1,0 +1,41 @@
+{
+  "mobiles": [
+    {
+      "id": 1,
+      "name": "Samsung S66",
+      "prix": 879,
+      "quantity": 2,
+      "image": "assets/store/samsung_S6.jfif",
+      "label": "samsung"
+    },
+    {
+      "id": 3,
+      "name": "Iphone X",
+      "prix": 797,
+      "quantity": 1,
+      "image": "assets/store/apple_iphone_X.jfif",
+      "label": "apple"
+    },
+    {
+      "id": 4,
+      "name": "iphone 8",
+      "prix": 99,
+      "label": "apple",
+      "image": "C:\\fakepath\\apple_iphone_7.jfif"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "prix": 0,
+      "label": "",
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "",
+      "prix": 0,
+      "label": "",
+      "image": ""
+    }
+  ]
+}

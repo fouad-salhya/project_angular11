@@ -1,0 +1,44 @@
+<div class="container mt-5">
+          <div class="row" *ngIf="show">
+              <div class="col-md-4">
+                  <div class="card">
+                      <img class="card-img-top" src="{{mobiles.image}}" alt="">
+                  </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">{{mobiles.name}}</h4>
+                          <p class="card-text">prix : {{mobiles.prix | currency : 'USD'}}</p>
+                          <button class="btn btn-primary btn-block" (click)="ajouterPanier()">
+                              Ajouter Au Panier
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row" *ngIf="!show">
+              <div class="col-md-6 mx-auto">
+                <legend>Mon Panier</legend>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Prix  </th>
+                            <th> Label </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">{{mobiles.name}}</td>
+                            <td> {{mobiles.prix}} </td>
+                            <td> {{mobiles.label}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-primary btn-block" (click)="Acheter()">
+                    Acheter 
+                </button>
+              </div>
+          </div>
+</div>
